@@ -24,3 +24,6 @@ Tue Jun 11 00:46:29 2024
 |  No running processes found                                                           |
 +---------------------------------------------------------------------------------------+
 ```
+You can run my code directly in VS Code, provided that you connect VS Code and the Azure GPU VM via a Jupyter server. Of course, you also have the option to run my code directly using Python.
+I  compare the analysis results of PyTorch and vLLM inference for Phi-3-mini-4k-instruct on the A100 VM. 
+
