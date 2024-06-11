@@ -181,4 +181,4 @@ The throughput in the prefill phase is very high at 19029.6 tokens/second.
 Decode phase throughput is significantly lower at 115.4 tokens/second, reflecting the complexity and computational demand of generating new tokens.
 ```
 
-Form the above info we could observe that vLLM has 3 times speed that Pytorch.The But Flash atten2 in vLLM locks up a lot of GPU memory based on the maximum sequence during inference, which is a big problem, and I haven't found a good way to do it other than limiting the sequence size. This means that even though phi-3 has 128k, if you use vLLM inference and actually use 128K arguments, it will cause OOM. Of course , using FP8 is a good method. So using the same code running on H100
+Form the above info we could observe that vLLM has 3 times speed that Pytorch.The huggingface/accelerate in vLLM locks up a lot of GPU memory based on the maximum sequence during inference, This means that even though phi-3 has 128k, if you use vLLM inference and actually use 128K arguments, it will cause OOM. Set gpu_memory_utilization or enforcing eager mode when using vLLM.
